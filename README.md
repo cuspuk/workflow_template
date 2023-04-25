@@ -7,8 +7,14 @@ A Snakemake workflow for `<description>`
 
 ## Development
 
-Along snakemake, pre-commit is required to install:
+Along snakemake, pre-commit is required to be install, for example using pip:
 
 ```bash
 pip install pre-commit
+```
+
+And then installed in the repository:
+
+```bash
+pre-commit install
 ```
