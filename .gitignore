@@ -1,0 +1,16 @@
+*
+!.github
+!.github/**
+!.tests/
+!.tests/**
+!config/
+!config/**
+!resources/
+!resources/**
+!workflow/
+!workflow/**
+!.gitattributes
+!.gitignore
+!.pre-commit-config.yaml
+!LICENSE
+!README.md
