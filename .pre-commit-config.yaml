@@ -1,12 +1,6 @@
 default_stages: [commit, push]
 
 repos:
-  - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: "v0.0.262"
-    hooks:
-      - id: ruff
-        args: [--fix, --exit-non-zero-on-fix, --line-length=120]
-
   - repo: https://github.com/psf/black
     rev: 23.3.0
     hooks:
@@ -47,7 +41,7 @@ repos:
       - id: codespell
 
   - repo: https://github.com/snakemake/snakefmt
-    rev: 0.4.4
+    rev: v0.8.4
     hooks:
       - id: snakefmt
 
@@ -55,7 +49,5 @@ repos:
     hooks:
       - id: snakemake_linter
         name: snakemake_linter
-        entry: snakemake -c1 --lint
+        entry: snakemake -c1 --lint --directory .tests/ --snakefile workflow/Snakefile
         language: python
-        files: "Snakefile$"
-        pass_filenames: false

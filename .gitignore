@@ -2,7 +2,10 @@
 !.github
 !.github/**
 !.tests/
-!.tests/**
+!.tests/config/
+!.tests/config/**
+!.tests/test_input/
+!.tests/test_input/**
 !config/
 !config/**
 !resources/

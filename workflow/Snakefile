@@ -1,4 +1,4 @@
-# The highest level of the workflow
+# The highest level logic of the workflow is defined here
 # Here **and only here** should be defined which other .smk files are included
 # Here define the rule `all` gathering all the outputs of the workflow
 # Here can be defined also other highlevel snakemake stuff like `localrules`, `min_version` or `report`

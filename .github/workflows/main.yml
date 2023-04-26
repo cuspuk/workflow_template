@@ -7,16 +7,6 @@ on:
     branches: [main]
 
 jobs:
-  Cancel-previous-jobs:
-    runs-on: ubuntu-latest
-    if: github.ref != 'refs/heads/main'
-    steps:
-      - uses: khan/pull-request-workflow-cancel@1.0.0
-        with:
-          workflows: "main.yml"
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-
   Formatting:
     runs-on: ubuntu-latest
     steps:
@@ -53,11 +43,11 @@ jobs:
         with:
           directory: .tests
           snakefile: workflow/Snakefile
-          args: "--use-conda --show-failed-logs --cores 3 --conda-cleanup-pkgs cache --all-temp"
+          args: "--use-conda --show-failed-logs --cores 3 --conda-cleanup-pkgs cache"
 
       - name: Test report
         uses: snakemake/snakemake-github-action@v1.24.0
         with:
-          directory: .test
+          directory: .tests
           snakefile: workflow/Snakefile
           args: "--report report.zip"
