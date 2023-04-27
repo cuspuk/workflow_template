@@ -7,9 +7,14 @@ A Snakemake workflow for `<description>`
 
 After pressing `Use this template`, the following steps are to be performed to finish the configuration of the new repository:
 
-In github: 1. Allow Github Actions to create pull requests (in Settings->Actions/general there is a checkbox `Allow GitHub Actions to create and approve pull requests`, check it.) 2. Block main branch (in Settings->Branches press `Add branch protection rule`, set `Branch name pattern` to `main` and check the `Require a pull request before merging` checkbox)
+In github:
 
-In `README.md` 1. replace `<XY>` values with the correct ones (in badges as well)
+- Allow Github Actions to create pull requests (in Settings->Actions/general there is a checkbox `Allow GitHub Actions to create and approve pull requests`, check it.)
+- Block main branch (in Settings->Branches press `Add branch protection rule`, set `Branch name pattern` to `main` and check the `Require a pull request before merging` checkbox)
+
+In README.md:
+
+- replace `<XY>` values with the correct ones (in badges as well)
 
 ## Development
 
