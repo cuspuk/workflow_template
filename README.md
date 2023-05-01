@@ -23,20 +23,16 @@ Repository is now created from the template. You can git clone the repository an
 Install snakemake, for example in the environment `snakemake_dev`:
 
 ```shell
-mamba create -c conda-forge -c bioconda --name snakemake_dev snakemake
+mamba create -c conda-forge -c bioconda --name snakemake_dev snakemake pre_commit
 ```
 
-Along snakemake, pre-commit is required to be installed, for example using pip:
-
-```bash
-pip install pre-commit
-```
-
-And then installed in the repository:
+Then set up `pre-commit` in the repository:
 
 ```bash
 pre-commit install
 ```
+
+Now before any commit, a defined set of actions will be performed, such as linting, formatting, etc.
 
 ### Best practices
 
