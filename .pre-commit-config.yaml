@@ -17,7 +17,6 @@ repos:
     rev: v5.10.1
     hooks:
       - id: isort
-        exclude: src/adapters/alembic
         args:
           - "--line-length=120"
 
