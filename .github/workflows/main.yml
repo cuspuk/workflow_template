@@ -24,10 +24,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Lint workflow
-        uses: snakemake/snakemake-github-action@v1.24.0
+        uses: snakemake/snakemake-github-action@v1.25.1
         with:
-          directory: .
+          directory: .tests
           snakefile: workflow/Snakefile
+          stagein: mamba install -n snakemake -c conda-forge peppy
           args: "--lint"
 
   Testing:
@@ -38,16 +39,24 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Free up some disk sapce
+        run: |
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /usr/share/dotnet
+
       - name: Test workflow
-        uses: snakemake/snakemake-github-action@v1.24.0
+        uses: snakemake/snakemake-github-action@v1.25.1
         with:
           directory: .tests
           snakefile: workflow/Snakefile
-          args: "--use-conda --show-failed-logs --cores 3 --conda-cleanup-pkgs cache"
+          stagein: "conda config --set channel_priority flexible"
+          args: "--use-conda --show-failed-logs --cores 2 --conda-cleanup-pkgs cache"
+          show-disk-usage-on-error: true
 
       - name: Test report
-        uses: snakemake/snakemake-github-action@v1.24.0
+        uses: snakemake/snakemake-github-action@v1.25.1
         with:
           directory: .tests
           snakefile: workflow/Snakefile
           args: "--report report.zip"
+          show-disk-usage-on-error: true
