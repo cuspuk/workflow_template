@@ -1,10 +1,10 @@
 # Snakemake workflow: `<name>`
 
 [![Snakemake](https://img.shields.io/badge/snakemake-≥7.25.0-brightgreen.svg)](https://snakemake.github.io)
-[![Tests](https://github.com/<owner>/<repo>/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/<owner>/<repo>/actions?query=branch%3Amain+workflow%3ATests)
+[![Tests](https://github.com/{USER}/{REPO}/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/{USER}/{REPO}/actions?query=branch%3Amain+workflow%3ATests)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
 
-A Snakemake workflow for `<description>`
+A Snakemake workflow for outbreak detection
 
 After pressing `Use this template`, the following steps are to be performed to finish the configuration of the new repository:
 
